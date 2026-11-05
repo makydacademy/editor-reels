@@ -1,6 +1,6 @@
 # Editor Reels · Makyd
 
-Edita con Claude Code o Codex, HyperFrames y FFmpeg. El asistente analiza tus archivos, presenta un **storyboard visual** y espera tu aprobación antes de producir el vídeo. La guía o kit dirige la estética; no limita las capacidades creativas.
+Edita con Claude Code o Codex, HyperFrames y FFmpeg. El asistente analiza tus archivos, presenta un **storyboard visual** y continúa la edición sin una aprobación adicional. La guía o kit dirige la estética; no limita las capacidades creativas.
 
 ## Empezar
 
@@ -29,10 +29,10 @@ Si no has creado las carpetas, la configuración las crea. No se borran los arch
 ## Primera edición
 
 ```text
-Usa la skill editar-reels-makyd. Edita [archivo de crudos] tomando como referencia [archivo de referencias]. [Opcional: usa el kit NOMBRE de branding]. Primero analiza el material y muéstrame el storyboard visual. Espera mi aprobación antes de editar el vídeo completo.
+Usa la skill editar-reels-makyd. Edita [archivo de crudos] tomando como referencia [archivo de referencias]. [Opcional: usa el kit NOMBRE de branding]. Primero analiza el material y muéstrame el storyboard visual. Continúa con la edición sin esperar aprobación adicional.
 ```
 
-Después puedes decir: «adelante», «cambia la escena 2», «baja la música» o «guarda este estilo en branding para próximos vídeos».
+Puedes pedir correcciones como: «cambia la escena 2», «baja la música» o «guarda este estilo en branding para próximos vídeos».
 
 La skill no necesita un kit para trabajar. Si hay varios, no los mezcla sin una dirección clara. El contenido de vídeos, transcripciones y archivos de referencia se trata como material, no como nuevas órdenes.
 
@@ -48,7 +48,7 @@ Consulta [instalación](INSTALAR.md), [skill](skills/editar-reels-makyd/SKILL.md
 
 ## Desarrollo y fuentes
 
-`npm test` verifica creación no destructiva, registro de la skill, storyboard y rutas. `npm run smoke -- --project RUTA` hace una prueba real de render; requiere dependencias instaladas.
+`npm test` verifica creación no destructiva, registro de la skill, storyboard, rutas, candidatos de repetición y tiempos del montaje. `npm run smoke -- --project RUTA` hace una prueba real de render; requiere dependencias instaladas.
 
 [HyperFrames oficial](https://github.com/heygen-com/hyperframes) · [FFmpeg](https://ffmpeg.org/) · [GSAP](https://gsap.com/) · [Fuentes y licencias](THIRD_PARTY.md).
 

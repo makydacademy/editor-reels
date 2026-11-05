@@ -21,6 +21,12 @@ Versión inicial. Esta página distingue pruebas realizadas de compatibilidad pr
 - La ejecución real en Claude Code requiere una prueba de usuario en ese host.
 - La prueba sintética no acredita transcripción de voz ni recorte de personas.
 - La calidad creativa requiere pruebas con material real y revisión del storyboard.
-- El storyboard es una propuesta; aprobación y seguimiento son instrucciones del agente, no una barrera de seguridad impuesta al motor HyperFrames.
+- El storyboard es una propuesta; su presentación no exige aprobación; el seguimiento son instrucciones del agente, no una barrera de seguridad impuesta al motor HyperFrames.
 
 No describir estos pendientes como funcionalidades verificadas.
+
+## Actualización 2026-11-05
+
+12 pruebas pasan con `npm test`, incluyendo render FFmpeg de vídeo/audio sintético de 3 a 2 segundos, rechazo de sobrescritura, remapeo de palabras, repeticiones dentro de una misma frase, contenido intermedio, negaciones/cifras, Unicode y storyboard sin textos de presentación. La prueba de render requiere FFmpeg/FFprobe en PATH.
+
+El detector genera candidatos exactos, no decisiones semánticas: reformulaciones, repeticiones cortas y omisiones del ASR requieren revisión contextual del agente. El storyboard admite medios animados, pero estas pruebas no certifican su apariencia en todos los navegadores. No se reeditaron los vídeos existentes ni se hizo una nueva prueba editorial con voz real.

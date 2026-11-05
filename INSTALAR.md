@@ -35,7 +35,7 @@ Usa el ejecutable local de `node_modules/hyperframes/bin/hyperframes.mjs` con No
 
 Registra las skills oficiales incluidas en la distribución fijada de HyperFrames con `node scripts/official-skills.mjs --project "RUTA" --agent codex` (o `claude`). Copia hyperframes, hyperframes-cli y media-use junto con sus referencias/recursos, sin modificar su contenido ni reemplazar personalizaciones. Comprueba los SKILL.md en el destino. Así no se actualizan globalmente las skills de otros proyectos.
 
-Las skills oficiales son una base técnica: prevalecen el flujo acordado de Makyd, el storyboard aprobado, el motor elegido y los permisos del usuario. No adoptar automáticamente sus servicios de pago, creación de cuentas, uploads, música, formato horizontal o actualizaciones. Si una referencia apunta a una skill adicional no incluida, consulta `docs`, la ayuda o el repositorio oficial e instala solo el componente necesario con sus dependencias; registra versión/origen. No es un catálogo cerrado de funciones.
+Las skills oficiales son una base técnica: prevalecen el flujo acordado de Makyd, el storyboard visual sin pausa obligatoria, el motor elegido y los permisos del usuario. No adoptar automáticamente sus servicios de pago, creación de cuentas, uploads, música, formato horizontal o actualizaciones. Si una referencia apunta a una skill adicional no incluida, consulta `docs`, la ayuda o el repositorio oficial e instala solo el componente necesario con sus dependencias; registra versión/origen. No es un catálogo cerrado de funciones.
 
 Ejecuta `browser ensure` si falta el navegador de render, con autorización para descargar. Prueba `doctor` de nuevo. Mantén la telemetría desactivada para los comandos del paquete mediante `HYPERFRAMES_NO_TELEMETRY=1`.
 

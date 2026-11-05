@@ -32,3 +32,9 @@ test('storyboard incrusta imagen, escapa texto y rechaza referencias externas',(
  plan.scenes[0].image='../fuera.png';fs.writeFileSync(path.join(root,'plan.json'),JSON.stringify(plan));
  assert.throws(()=>buildStoryboard(root,'plan.json'));
 });
+test('storyboard muestra solo medios y admite muestras animadas',()=>{
+ const root=fs.mkdtempSync(path.join(os.tmpdir(),'makyd-board-'));
+ fs.writeFileSync(path.join(root,'preview.mp4'),'test');
+ fs.writeFileSync(path.join(root,'plan.json'),JSON.stringify({title:'NO MOSTRAR',scenes:[{video:'preview.mp4',action:'NO MOSTRAR',text:'NO AÑADIR'}]}));
+ const html=buildStoryboard(root,'plan.json');assert.ok(html.includes('<video controls'));assert.ok(!html.includes('NO MOSTRAR'));assert.ok(!html.includes('NO AÑADIR'));assert.ok(!html.includes('aprobación'));
+});

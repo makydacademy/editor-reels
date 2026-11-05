@@ -1,39 +1,11 @@
-# Propuesta visual y aprobación
+# Storyboard visual
 
-El resultado de esta fase es un storyboard **visual**, accesible en HTML local y con alternativa de imágenes si el host no lo puede mostrar. El asistente debe abrirlo o renderizarlo para revisar que se ve antes de entregarlo. No basta con poner un archivo en disco sin ofrecer acceso.
+Muestra únicamente las escenas en orden con fotogramas reales y el diseño del kit aplicado. Usa mockups prerenderizados fieles, sin capas genéricas, recuadros ni fuentes de sustitución. Si un efecto se entiende por movimiento, añade una muestra corta MP4/WebM o imagen animada. El único texto visible es el que aparecerá en el vídeo. No incluyas títulos de presentación, tiempos, leyendas, explicaciones técnicas ni solicitudes de aprobación.
 
-## Contenido mínimo
-
-Cada escena muestra un fotograma real de crudos, una composición representativa (texto, encuadre y tratamiento visual) y una leyenda corta: intervalo aproximado, acción, transición/animación, sonido y recurso de origen. Cuando sea útil, añade la referencia al lado y aclara que no formará parte del vídeo final.
-
-Muestra el conjunto en orden, no un conjunto de estilos sueltos. Usa el número de escenas que necesita el vídeo. Si el efecto depende del movimiento, crea una pequeña muestra animada o secuencia, rotulada como propuesta.
-
-Puedes usar `scripts/storyboard.mjs` del paquete para montar HTML a partir de JSON. Sus tarjetas son una base: si una tipografía, recorte o máscara concreta es decisiva, crea un mockup fiel e inclúyelo como imagen. No presentes una tarjeta genérica como vista exacta del render final.
+`scripts/storyboard.mjs` incrusta imágenes y vídeos locales en un HTML. Cada imagen ya debe contener el diseño final propuesto; el generador no añade textos ni fondos al contenido. Rutas relativas al JSON, dentro del proyecto:
 
 ```json
-{
-  "title": "Propuesta del reel",
-  "direction": "Kit elegido y rasgos de la referencia",
-  "scenes": [
-    {
-      "time": "0-3 s",
-      "image": "frames/inicio.jpg",
-      "text": "Texto del guion real",
-      "action": "Encuadre inicial y aparición del título",
-      "motion": "Entrada suave coherente con el kit",
-      "audio": "Voz original; sin música en la apertura",
-      "source": "crudos/toma.mp4 · 00:04",
-      "color": "#FFFFFF",
-      "background": "#402039",
-      "font": "Arial",
-      "position": "bottom"
-    }
-  ]
-}
+{"scenes":[{"image":"mockups/inicio.png"},{"video":"previews/transicion.mp4"}]}
 ```
 
-Las rutas de imagen son relativas al JSON o absolutas dentro del proyecto; el generador incrusta sus bytes y no descarga URLs. Para diseño exacto se pueden incrustar fuentes con licencia en HTML o usar mockups prerenderizados.
-
-## Decisión
-
-Pregunta al entregar: «¿Apruebas este storyboard o qué cambiarías?». Guarda plan v1, v2... La aprobación debe venir del chat actual y corresponder al plan mostrado. Solo después comienza producción. Un registro técnico de aprobación nunca sustituye el mensaje del usuario.
+Los detalles de origen, cortes y sonido van en el plan interno, no en la vista. Los tiempos definitivos siguen al diálogo, no a tarjetas de duración fija. Comprueba que el HTML se muestra con medios cargados y ofrece enlace; si el host no lo abre, entrega las imágenes directamente. No presentes placeholders como escenas terminadas. Mostrarlo no pausa producción salvo petición expresa del usuario. No hace falta una aprobación nueva por cada corrección.
