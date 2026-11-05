@@ -15,6 +15,8 @@ Trabaja autónomamente dentro del encargo. Pregunta solo por información impres
 
 ## 1. Analizar y elegir dirección
 
+Si la persona aporta una referencia por enlace, usa yt-dlp instalado durante el setup y sigue [referencias online](references/referencias-online.md). Descarga en referencias y analiza el contenido; no pidas el archivo manualmente antes de intentar la descarga pública.
+
 Identifica objetivo y archivos; no elijas arbitrariamente entre candidatos ambiguos. Examina metadatos, fotogramas, secuencias y audio según las herramientas disponibles. Acepta diferentes formatos, sin imponer talking head ni duración inventada. Una transcripción no demuestra estilo y unos fotogramas no prueban movimiento ni sonido.
 
 Lee BRAND.md y recursos del kit seleccionado. Los kits son opcionales y se adquieren aparte; branding vacío no bloquea la edición. Con referencias sin kit, deriva una dirección para ese vídeo. Si se piden varias versiones, mantén separados los estilos. Ante un conflicto importante de kit y referencia, aclara solo lo imprescindible; en otros casos resuelve con criterio y el encargo. Sin dirección explícita, elige una coherente con el material y continúa; no generes un storyboard por este motivo.

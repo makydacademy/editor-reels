@@ -14,7 +14,7 @@ Comprueba Node.js >=22, npm, FFmpeg y FFprobe con sus comandos de versión. Apro
 - macOS: usa Homebrew si ya está disponible (`brew install node ffmpeg`) o instaladores oficiales. No instales Homebrew ni eleves privilegios sin autorización.
 - Reinicia el terminal/contexto si PATH cambió. No desactives TLS, antivirus o políticas del equipo.
 
-Python, yt-dlp y Watch no son requisitos del núcleo. No instales Watch en este flujo. Para referencias online, pide el archivo descargado si no existe una herramienta de descarga autorizada.
+yt-dlp es parte de la instalación inicial. setup.mjs aprovecha una instalación disponible o descarga el ejecutable oficial para Windows, macOS o Linux compatible en herramientas/bin, verifica SHA256 y registra versión y ruta. No requiere Python para esos binarios. Si falla, el setup devuelve estado pendiente y código de error: resuelve con la documentación oficial https://github.com/yt-dlp/yt-dlp#installation antes de declarar completa la instalación. No instala Watch. No actualiza silenciosamente una instalación existente.
 
 ## 2. Instalar el paquete y registrar la skill
 
@@ -51,6 +51,8 @@ Abre y revisa también los fotogramas y el vídeo; no confundas una comprobació
 
 Si hay voz en el primer encargo, prepara la transcripción local con `transcribe --help`, modelo **multilingüe**, idioma adecuado y prueba un fragmento. No uses modelos `.en` para español. Consulta `references/capacidades.md` en la skill si falta una función. No cambies a una API de pago automáticamente.
 
+Para referencias por enlace, lee references/referencias-online.md de la skill. El --version acredita disponibilidad, no compatibilidad con todos los sitios. Comprueba la primera descarga con el enlace que aporte la persona. Para sitios que necesiten un runtime JavaScript, usa Node ya instalado mediante --js-runtimes node; consulta la ayuda/documentación de la versión instalada si necesita componentes adicionales. No descargues un vídeo ajeno arbitrario como prueba inicial.
+
 ## 5. Cierre
 
-Informa: carpetas creadas, skill registrada, versión de HyperFrames, prueba y ubicación, y funciones pendientes. Solo di «instalación básica verificada» si el render pasó y las skills necesarias están disponibles. Un bloqueo debe nombrar el paso fallido y la solución pendiente. No pidas continuar con instalación repetidamente si ya está autorizada, salvo permisos que exija el entorno.
+Informa: carpetas creadas, skill registrada, versión de HyperFrames, prueba y ubicación, y funciones pendientes. Solo di «instalación básica verificada» si el render pasó, yt-dlp responde y las skills necesarias están disponibles. Un bloqueo debe nombrar el paso fallido y la solución pendiente. No pidas continuar con instalación repetidamente si ya está autorizada, salvo permisos que exija el entorno.

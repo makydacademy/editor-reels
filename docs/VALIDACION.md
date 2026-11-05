@@ -30,3 +30,7 @@ No describir estos pendientes como funcionalidades verificadas.
 12 pruebas pasan con `npm test`, incluyendo render FFmpeg de vídeo/audio sintético de 3 a 2 segundos, rechazo de sobrescritura, remapeo de palabras, repeticiones dentro de una misma frase, contenido intermedio, negaciones/cifras, Unicode y storyboard sin textos de presentación. La prueba de render requiere FFmpeg/FFprobe en PATH.
 
 El detector genera candidatos exactos, no decisiones semánticas: reformulaciones, repeticiones cortas y omisiones del ASR requieren revisión contextual del agente. El storyboard admite medios animados, pero estas pruebas no certifican su apariencia en todos los navegadores. No se reeditaron los vídeos existentes ni se hizo una nueva prueba editorial con voz real.
+
+## yt-dlp · 2026-11-05
+
+14 pruebas pasan. Se probó además una descarga real del binario oficial Windows x64, verificación SHA256, ejecución --version (2026.10.26) y reutilización sin volver a instalar. macOS/Linux y descarga de una referencia desde una plataforma concreta no se han probado en esta actualización. El setup informa pendiente y devuelve error si yt-dlp no queda disponible. No se instala Watch.

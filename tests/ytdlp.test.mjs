@@ -1,0 +1,3 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {createHash} from 'node:crypto';import {assetFor,verify} from '../scripts/ytdlp.mjs';
+test('selecciona binarios oficiales por arquitectura y rechaza plataformas desconocidas',()=>{assert.equal(assetFor('win32','arm64'),'yt-dlp_arm64.exe');assert.equal(assetFor('darwin','arm64'),'yt-dlp_macos');assert.throws(()=>assetFor('linux','unknown'));});
+test('no acepta binario alterado ni checksum de otro archivo',()=>{const b=Buffer.from('fixture'),hash=createHash('sha256').update(b).digest('hex');verify(b,`${hash}  yt-dlp.exe`,'yt-dlp.exe');assert.throws(()=>verify(Buffer.from('changed'),`${hash}  yt-dlp.exe`,'yt-dlp.exe'));assert.throws(()=>verify(b,`${hash}  other.exe`,'yt-dlp.exe'));});

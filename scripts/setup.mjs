@@ -3,6 +3,8 @@ import path from 'node:path';
 import {pathToFileURL} from 'node:url';
 import {args,rootOf,ensureDir,repo,run,hf,uniquePath,writeNew} from './lib.mjs';
 
+import {ensureYtdlp} from './ytdlp.mjs';
+
 export function prepare(project,agent) {
   const root=rootOf(project);
   if(!['codex','claude','both'].includes(agent)) throw Error('--agent debe ser codex, claude o both.');
@@ -43,6 +45,7 @@ if(process.argv[1] && import.meta.url===pathToFileURL(path.resolve(process.argv[
   try {
     const a=args(); const state=prepare(a.project,a.agent);
     const checks={node:process.version};
+    try {checks.ytdlp=await ensureYtdlp(state.root);} catch(e) {checks.ytdlp={status:'PENDIENTE',error:e.message};process.exitCode=1;}
     for(const tool of ['ffmpeg','ffprobe']) {
       try {checks[tool]=run(tool,['-version']).split('\n')[0];} catch {checks[tool]='PENDIENTE';}
     }

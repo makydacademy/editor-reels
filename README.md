@@ -41,6 +41,7 @@ La skill no necesita un kit para trabajar. Si hay varios, no los mezcla sin una 
 ## Alcance de esta versión
 
 - Motor: HyperFrames `0.8.190`, con GSAP `3.14.2` y FFmpeg/FFprobe. La configuración no actualiza versiones silenciosamente.
+- yt-dlp forma parte del setup inicial: permite descargar referencias por enlace en `referencias`. Si el sitio no permite la descarga, el editor pide el archivo. No todos los enlaces son compatibles.
 - Watch **no se instala ni es requisito**: queda para una clase adicional. El análisis básico usa fotogramas de FFmpeg y transcripción local cuando hay voz.
 - Sin Remotion. Sin APIs de IA de pago obligatorias. Claude/Codex tienen sus propias condiciones de acceso y consumo.
 - Recortes de personas, máscaras, audio reactivo, componentes del catálogo y otras funciones se utilizan según el proyecto y sus dependencias. No se promete que todos los modelos estén descargados ni todos los efectos probados desde el primer inicio.
