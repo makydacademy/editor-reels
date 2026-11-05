@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "Editor de reels para Claude Code y Codex: HyperFrames, referencias y kits, con storyboard previo.",
+  "description": "Editor de reels para Claude Code y Codex: HyperFrames, referencias y kits, con storyboard opcional.",
   "engines": { "node": ">=22" },
   "scripts": {
     "setup": "node scripts/setup.mjs",

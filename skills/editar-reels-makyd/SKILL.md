@@ -1,13 +1,13 @@
 ---
 name: editar-reels-makyd
-description: Edita vídeos con HyperFrames y FFmpeg desde crudos, referencias y kits. Depura repeticiones y montaje, muestra un storyboard visual y continúa sin aprobación adicional. Úsala para editar o preparar el editor Makyd en Claude Code o Codex.
+description: Edita vídeos con HyperFrames y FFmpeg desde crudos, referencias y kits. Depura repeticiones y montaje, crea storyboard solo a petición y continúa sin aprobación adicional. Úsala para editar o preparar el editor Makyd en Claude Code o Codex.
 ---
 
 # Editor Reels Makyd
 
 ## Entorno y alcance
 
-Trabaja en la raíz elegida por la persona. Crea idempotentemente `crudos`, `referencias`, `branding`, `exportados` y `herramientas` si faltan. Conserva originales; informa conflictos de nombres o raíz ambigua. El paquete vive normalmente en `herramientas/editor-reels`; lee su INSTALAR.md si necesita preparación. Guarda trabajo interno en `herramientas/trabajo/<proyecto>` y entregas versionadas en `exportados/<proyecto>`.
+Trabaja en la raíz elegida por la persona. Crea idempotentemente `crudos`, `referencias`, `branding`, `exportados` y `herramientas` si faltan. Conserva originales; informa conflictos de nombres o raíz ambigua. El paquete vive normalmente en `herramientas/editor-reels`; lee su INSTALAR.md si necesita preparación. Guarda trabajo interno en `herramientas/trabajo/<proyecto>` y únicamente vídeos finales en `exportados/<proyecto>`. Portadas, capturas, storyboards, pruebas, renders intermedios y registros van en `herramientas/trabajo/<proyecto>`. Al sustituir una entrega, conserva la anterior en `herramientas/trabajo/<proyecto>/versiones-anteriores`, sin sobrescribirla; deja en exportados solo la versión final vigente de cada vídeo solicitado. No reorganices entregas antiguas ajenas al encargo automáticamente.
 
 Usa HyperFrames como único motor de composición, GSAP para animaciones y FFmpeg/FFprobe para preparación, cortes y audio. Consulta las skills oficiales pertinentes: son documentación técnica subordinada al encargo. No adoptes automáticamente pagos, uploads, música, formato horizontal o actualizaciones. No instales Remotion ni Watch. Consulta [capacidades](references/capacidades.md) cuando haga falta. No limites las funcionalidades a un catálogo de efectos.
 
@@ -17,7 +17,7 @@ Trabaja autónomamente dentro del encargo. Pregunta solo por información impres
 
 Identifica objetivo y archivos; no elijas arbitrariamente entre candidatos ambiguos. Examina metadatos, fotogramas, secuencias y audio según las herramientas disponibles. Acepta diferentes formatos, sin imponer talking head ni duración inventada. Una transcripción no demuestra estilo y unos fotogramas no prueban movimiento ni sonido.
 
-Lee BRAND.md y recursos del kit seleccionado. Los kits son opcionales y se adquieren aparte; branding vacío no bloquea la edición. Con referencias sin kit, deriva una dirección para ese vídeo. Si se piden varias versiones, mantén separados los estilos. Ante un conflicto importante de kit y referencia, aclara solo lo imprescindible; en otros casos resuelve con criterio y el encargo. Sin dirección explícita, propone visualmente una coherente con el material y continúa.
+Lee BRAND.md y recursos del kit seleccionado. Los kits son opcionales y se adquieren aparte; branding vacío no bloquea la edición. Con referencias sin kit, deriva una dirección para ese vídeo. Si se piden varias versiones, mantén separados los estilos. Ante un conflicto importante de kit y referencia, aclara solo lo imprescindible; en otros casos resuelve con criterio y el encargo. Sin dirección explícita, elige una coherente con el material y continúa; no generes un storyboard por este motivo.
 
 Aplica las animaciones principales que caracterizan cada guía. No sustituyas todos los estilos por una plantilla genérica ni añadas recuadros donde la guía no los tenga. Añade capacidades de HyperFrames por iniciativa propia cuando aporten y sean coherentes. Si hace falta DESIGN.md, créalo en trabajo sin alterar el kit original.
 
@@ -29,15 +29,17 @@ Usa `scripts/montage.mjs` para candidatos, validación de cortes, remapeo y rend
 
 **Control 1:** revisa continuidad del discurso y repeticiones de la base, incluyendo empalmes con contexto, audio y sincronía. Comprueba los candidatos residuales sin borrarlos automáticamente. Las comprobaciones de texto no equivalen a escuchar. Registra internamente qué revisaste y las limitaciones; no declares una escucha que no hiciste. Corrige el montaje antes de multiplicar estilos.
 
-## 3. Storyboard visual y producción
+## 3. Producción y storyboard opcional
 
-Lee [storyboard](references/storyboard.md). Muestra fotogramas reales con el diseño aplicado y pequeñas muestras animadas si hacen falta. Solo contenido del vídeo: sin explicaciones, tiempos, etiquetas técnicas ni adornos. Guarda las decisiones técnicas en archivos internos.
+Por defecto organiza internamente la edición y produce el vídeo, sin generar ni mostrar storyboard. Solo si la persona pide storyboard o ver una propuesta previa, lee [storyboard](references/storyboard.md) y créalo: fotogramas reales con el diseño aplicado y muestras animadas cuando hagan falta; solo contenido del vídeo, sin explicaciones ni adornos. Guarda decisiones técnicas en trabajo. El storyboard no sustituye ninguno de los dos controles.
 
-Mostrar el storyboard no detiene el proceso ni exige aprobación adicional. Actualízalo si cambia el diseño. Orienta el orden visual pero no fija tiempos rígidos: ajusta animaciones, subtítulos y transiciones al diálogo depurado usando tiempos remapeados. Integra b-rolls e imágenes de crudos. Evita duplicar texto simultáneamente en titular y subtítulo sin intención visual.
+Si se solicitó storyboard, mostrarlo no detiene el proceso ni exige aprobación adicional; espera solo si la persona pidió aprobar antes de continuar. Actualízalo si cambia el diseño. Orienta el orden visual pero no fija tiempos rígidos: ajusta animaciones, subtítulos y transiciones al diálogo depurado usando tiempos remapeados. Integra b-rolls e imágenes de crudos. Evita duplicar texto simultáneamente en titular y subtítulo sin intención visual.
+
+En círculos, cuadros o máscaras que pertenezcan al kit, usa texto grande y bien distribuido, con márgenes, contraste y saltos de línea legibles. Reserva estas composiciones para frases breves y concretas que merezcan énfasis, no para todo el discurso ni como subtítulos permanentes. Ajusta la composición al texto sin desbordamientos ni cubrir elementos importantes; no añadas estas formas a kits que no las incluyen.
 
 Usa máscaras, recortes, tracking, texto detrás de la persona, componentes y otras funciones según su soporte y pertinencia. No prometas perfección ni subas medios a servicios externos automáticamente. Conserva origen y licencia de recursos. Consulta antes de gastos o cuentas nuevas realmente necesarios.
 
-Añade efectos de sonido cuando aporten a gestos, entradas, impactos o transiciones, también por iniciativa propia. Ausencia de música no significa ausencia de efectos. Usa recursos locales propios o con licencia válida y registra archivo, momento y ganancia. Sincroniza el inicio audible con la acción, evita saturación y mantén la voz dominante. No añadas un whoosh en cada corte. No reutilices música de referencias sin autorización/licencia.
+Añade efectos de sonido cuando aporten a gestos, entradas, impactos o transiciones, también por iniciativa propia. Acompaña frases importantes con un sonido coherente con su animación: clic para una aparición puntual, whoosh para un desplazamiento o disparo de cámara para un efecto fotográfico, según el kit y sin aplicar los tres por defecto. Ausencia de música no significa ausencia de efectos. Usa recursos locales propios o con licencia válida y registra archivo, momento y ganancia. Sincroniza el inicio audible con la acción, evita saturación y mantén la voz dominante. No añadas un whoosh en cada corte. No reutilices música de referencias sin autorización/licencia.
 
 ## 4. Resultado: control 2 y entrega
 

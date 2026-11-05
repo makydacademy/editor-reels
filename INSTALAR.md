@@ -35,7 +35,7 @@ Usa el ejecutable local de `node_modules/hyperframes/bin/hyperframes.mjs` con No
 
 Registra las skills oficiales incluidas en la distribución fijada de HyperFrames con `node scripts/official-skills.mjs --project "RUTA" --agent codex` (o `claude`). Copia hyperframes, hyperframes-cli y media-use junto con sus referencias/recursos, sin modificar su contenido ni reemplazar personalizaciones. Comprueba los SKILL.md en el destino. Así no se actualizan globalmente las skills de otros proyectos.
 
-Las skills oficiales son una base técnica: prevalecen el flujo acordado de Makyd, el storyboard visual sin pausa obligatoria, el motor elegido y los permisos del usuario. No adoptar automáticamente sus servicios de pago, creación de cuentas, uploads, música, formato horizontal o actualizaciones. Si una referencia apunta a una skill adicional no incluida, consulta `docs`, la ayuda o el repositorio oficial e instala solo el componente necesario con sus dependencias; registra versión/origen. No es un catálogo cerrado de funciones.
+Las skills oficiales son una base técnica: prevalecen el flujo acordado de Makyd, el storyboard solo bajo petición y sin pausa obligatoria, el motor elegido y los permisos del usuario. No adoptar automáticamente sus servicios de pago, creación de cuentas, uploads, música, formato horizontal o actualizaciones. Si una referencia apunta a una skill adicional no incluida, consulta `docs`, la ayuda o el repositorio oficial e instala solo el componente necesario con sus dependencias; registra versión/origen. No es un catálogo cerrado de funciones.
 
 Ejecuta `browser ensure` si falta el navegador de render, con autorización para descargar. Prueba `doctor` de nuevo. Mantén la telemetría desactivada para los comandos del paquete mediante `HYPERFRAMES_NO_TELEMETRY=1`.
 
@@ -45,7 +45,7 @@ Ejecuta `browser ensure` si falta el navegador de render, con autorización para
 node scripts/smoke.mjs --project "RUTA"
 ```
 
-El script genera su propio fondo, texto, animación y tono suave; renderiza con HyperFrames y verifica MP4, duración, resolución, audio y cambio visual entre fotogramas. Guarda un archivo con nombre único en exportados. No pide grabar un vídeo.
+El script genera su propio fondo, texto, animación y tono suave; renderiza con HyperFrames y verifica MP4, duración, resolución, audio y cambio visual entre fotogramas. Guarda un archivo con nombre único en la carpeta de prueba de herramientas; exportados se reserva para vídeos finales. No pide grabar un vídeo.
 
 Abre y revisa también los fotogramas y el vídeo; no confundas una comprobación técnica con una revisión visual o auditiva completa. Esta prueba no acredita transcripción, máscaras ni recorte de personas. Registra esos estados por separado.
 

@@ -10,7 +10,7 @@ try {
   const output=path.resolve(root,a.output);
   if(!inside(root,input) || !inside(root,output)) throw Error('Entrada y salida deben estar dentro del proyecto.');
   const rel=path.relative(root,output).split(path.sep);
-  if(!['herramientas','exportados'].includes(rel[0])) throw Error('Guarda fotogramas en herramientas o exportados.');
+  if(rel[0]!=='herramientas'||rel[1]!=='trabajo') throw Error('Guarda fotogramas en herramientas/trabajo; exportados es solo para vídeos finales.');
   let probe=root;
   for(const part of rel) {probe=path.join(probe,part);if(fs.existsSync(probe)&&fs.lstatSync(probe).isSymbolicLink()) throw Error('No escribir a través de enlaces.');}
   if(fs.existsSync(output)) throw Error('Elige una carpeta de salida nueva.');

@@ -1,4 +1,6 @@
-# Storyboard visual
+# Storyboard visual · solo a petición
+
+No generes esta vista por defecto. Úsala si la persona pide storyboard o ver la propuesta antes. Guárdala con sus recursos en `herramientas/trabajo/<proyecto>`, nunca en exportados. Espera aprobación solo si también se solicita expresamente.
 
 Muestra únicamente las escenas en orden con fotogramas reales y el diseño del kit aplicado. Usa mockups prerenderizados fieles, sin capas genéricas, recuadros ni fuentes de sustitución. Si un efecto se entiende por movimiento, añade una muestra corta MP4/WebM o imagen animada. El único texto visible es el que aparecerá en el vídeo. No incluyas títulos de presentación, tiempos, leyendas, explicaciones técnicas ni solicitudes de aprobación.
 

@@ -1,6 +1,6 @@
 # Editor Reels · Makyd
 
-Edita con Claude Code o Codex, HyperFrames y FFmpeg. El asistente analiza tus archivos, presenta un **storyboard visual** y continúa la edición sin una aprobación adicional. La guía o kit dirige la estética; no limita las capacidades creativas.
+Edita con Claude Code o Codex, HyperFrames y FFmpeg. El asistente analiza tus archivos, edita y entrega el vídeo final. El **storyboard visual se crea solo si lo pides**; esperar aprobación también requiere que lo solicites. La guía o kit dirige la estética; no limita las capacidades creativas.
 
 ## Empezar
 
@@ -21,16 +21,18 @@ Prepara esta carpeta como mi editor siguiendo https://github.com/makydacademy/ed
 | `crudos` | Grabaciones, imágenes de apoyo y b-rolls propios |
 | `referencias` | Vídeos e imágenes que inspiran el resultado |
 | `branding` | Cada kit descomprimido en su subcarpeta; también estilos guardados |
-| `exportados` | Storyboards, vistas previas y vídeos entregados con versiones |
-| `herramientas` | Este paquete y trabajo técnico que gestiona el asistente |
+| `exportados` | Solo vídeos finales vigentes, sin portadas ni capturas |
+| `herramientas` | Este paquete; en trabajo se guardan pruebas, capturas, storyboards solicitados y versiones anteriores |
 
 Si no has creado las carpetas, la configuración las crea. No se borran los archivos existentes.
 
 ## Primera edición
 
 ```text
-Usa la skill editar-reels-makyd. Edita [archivo de crudos] tomando como referencia [archivo de referencias]. [Opcional: usa el kit NOMBRE de branding]. Primero analiza el material y muéstrame el storyboard visual. Continúa con la edición sin esperar aprobación adicional.
+Usa la skill editar-reels-makyd. Edita [archivo de crudos] tomando como referencia [archivo de referencias]. [Opcional: usa el kit NOMBRE de branding]. Analiza el material, depura el montaje y entrega el vídeo final.
 ```
+
+Opcionalmente puedes pedir: «muéstrame un storyboard visual» y, si deseas detener la producción, «espera mi aprobación».
 
 Puedes pedir correcciones como: «cambia la escena 2», «baja la música» o «guarda este estilo en branding para próximos vídeos».
 

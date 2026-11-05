@@ -19,5 +19,5 @@ export function buildStoryboard(project,input) {
  return `<!doctype html><html lang="es"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Storyboard</title><style>*{box-sizing:border-box}body{margin:0;background:#171717}main{max-width:1200px;margin:auto;padding:16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}img,video{display:block;width:100%;height:auto;max-height:85vh;object-fit:contain}</style><main>${scenes}</main></html>`;
 }
 if(process.argv[1]&&import.meta.url===pathToFileURL(path.resolve(process.argv[1])).href){
- try{const a=args(),root=rootOf(a.project),out=uniquePath(path.join(root,'exportados'),'storyboard','.html');writeNew(out,buildStoryboard(root,a.input));console.log(out);}catch(e){console.error(e.message);process.exitCode=1;}
+ try{const a=args(),root=rootOf(a.project),out=uniquePath(path.join(root,'herramientas','trabajo','storyboards'),'storyboard','.html');writeNew(out,buildStoryboard(root,a.input));console.log(out);}catch(e){console.error(e.message);process.exitCode=1;}
 }
